@@ -25,6 +25,10 @@ class Song
   def self.create_by_name(name)
     song = Song.new_by_name(name).save
   end 
+  
+  def self.find_by_name(name)
+    self.all.find {|song| song.name == name}
+  end 
   def self.destroy_all
     @@all.clear 
   end
