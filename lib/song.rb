@@ -43,6 +43,10 @@ class Song
   def self.create_from_filename(filename)
     self.new_from_filename(filename).save
   end 
+  
+  def self.alphabetical
+    self.all.sort_by {|song| song.name}
+  end 
   def self.destroy_all
     @@all.clear 
   end
